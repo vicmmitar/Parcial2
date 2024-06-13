@@ -21,7 +21,6 @@ salida_esperada = iris.target
 salida_esperada_one_hot = np.zeros((salida_esperada.size, salida_esperada.max()+1))
 salida_esperada_one_hot[np.arange(salida_esperada.size), salida_esperada] = 1
 
-
 # Función de activación y su derivada
 def sigmoide(x):
     return 1 / (1 + np.exp(-x))
@@ -45,7 +44,7 @@ pesos_entrada_oculta = np.random.uniform(size=(neuronas_capa_entrada, neuronas_c
 pesos_oculta_salida = np.random.uniform(size=(neuronas_capa_oculta, neuronas_capa_salida))
 
 # Bucle de entrenamiento de la red neuronal
-for _ in range(10000):  # número de iteraciones
+for _ in range(1):  # número de iteraciones
     # Propagación hacia adelante
     entrada_capa_oculta = np.dot(entradas, pesos_entrada_oculta)
     activaciones_capa_oculta = sigmoide(entrada_capa_oculta)
